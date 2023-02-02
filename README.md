@@ -14,14 +14,14 @@
 4. Создайте Docker контейнер с postgres выполнив команду-  
 `python create_DB.py`
 
-5. Выполние миграцию данных в базу данных выполнив команды-   
+5. Выполние миграцию данных в базу данных выполнив команды-  
 `python my_task_list/manage.py makemigrations`  
 `python my_task_list/manage.py migrate`
 
-6. Создайте пользователя admin  
+6. Создайте пользователя admin выполнив команду-  
 `python my_task_list/manage.py createsuperuser`
 
-7. Зпапустите приложение  
+7. Зпапустите приложение выполнив команду-  
 `python my_task_list/manage.py runserver`
 
 ### Главная страница приложения- ###
