@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="center">
+    <a href="http://127.0.0.1:8000/create/"><button>Создать новую задачу</button></a>
+    <h2>Мой список дел</h2>
+    {% if tasks %}
+        <ul class="tasks">
+            {% for task in tasks %}
+                <article class="task">
+                    <div class="task mb-4">
+                        <div class="task-body">
+                            <h3>
+                                <a href="{% url 'task' task.pk %}" class="{% if task.completed%}completed{%endif%}">{{ task.task }}</a>
+                            </h3>
+                            <h6 class="task-subtitle mb-2 text-muted">{{ task.completed_text }}</h6>
+                            <a href="{% url 'task_update' task.pk %}"><button>Обновить задачу</button></a>
+                            <a href="{% url 'task_delete' task.pk %}"><button>Удалить задачу</button></a>
+                        </div>
+                    </div>
+                </article>
+            {% endfor %}
+    {% else %}
+        <p>Нет заданий.</p>
+    {% endif %}
+	</ul>
+</div>
+{% endblock content %}

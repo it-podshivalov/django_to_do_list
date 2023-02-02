@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <html>
+        <head>
+            <title>UpdateView</title>
+        </head>
+        <body>
+            <h1>Обновление задачи</h1>
+            <form method="POST">
+                {% csrf_token %}    
+                Задача:<br>
+                {{ form.task }}<br>
+                Выполнено? {{ form.completed }}<br>
+                <input type="submit" value="Обновить">
+            </form>
+            <a href="http://127.0.0.1:8000/"><button>Вернуться к списку задач</button></a>
+        </body>
+    </html>
+{% endblock content %}
+

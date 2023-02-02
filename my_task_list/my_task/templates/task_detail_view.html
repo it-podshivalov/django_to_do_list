@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <article class="task">
+        <header>
+            <h2>{{ task.task }}</h2>
+            <p class="task-creationTime">Время создания - {{ task.creationTime }}</p>
+            <span class="badge {% if task.completed %}badge-completed{% else %}badge-pending{%endif%}">
+                {% if task.completed %} Выполнено 
+                <p class="task-endTime">Время завершения - {{ task.endTime }}</p>
+                {%else%} Не выполнено 
+                {%endif%}
+            </span>
+            
+        </header>
+    </article>
+    <a href="http://127.0.0.1:8000/"><button>Вернуться к списку задач</button></a>
+    <a href="{% url 'task_update' task.pk %}"><button>Обновить задачу</button></a>
+{% endblock content %} 

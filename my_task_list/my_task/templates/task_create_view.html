@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!DOCTYPE html>
+    <html>
+        <head>
+        </head>
+        <body>
+            <h1>Новая задача</h1>
+            <form method="post">
+                {% csrf_token %}
+                Задача:<br>
+                {{ form.task }}<br>
+                <input type="submit" value="Создать">
+            </form>
+            <a href="http://127.0.0.1:8000/"><button>Вернуться к списку задач</button></a>
+        </body>
+    </html>
+{% endblock content %}    
+
